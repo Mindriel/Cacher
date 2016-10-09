@@ -1,3 +1,1 @@
-import Cacher from './src/Cacher';
-
-export default Cacher;
+module.exports = require('./build/src/Cacher').default;

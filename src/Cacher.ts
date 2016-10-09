@@ -1,24 +1,25 @@
 export default class Cacher {
-    _cache = {};
-    _functor = null;
-    _context = null;
+    private _cache : Object = {};
+    private _functor : Function = null;
+    private _context : Object = null;
+    private _action : number = null;
 
-    context(context_) {
+    public context(context_ : Object) : this {
         this._context = context_;
         return this;
     }
 
-    functor(functor_) {
+    public functor(functor_ : Function) : this {
         this._functor = functor_;
         return this;
     }
 
-    action() {
-        this._action = 1;
+    public action(argumentNumber : number) : this {
+        this._action = argumentNumber;
         return this;
     }
 
-    create() {
+    public create() : Function {
         return (...args) => {
             if (!this._cache[args[0]]) {
                 this._cache[args[0]] = () => {
