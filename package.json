@@ -1,0 +1,30 @@
+{
+  "name": "Cacher",
+  "version": "0.0.0",
+  "description": "Simple library for caching more complex function calls.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha --recursive ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mindriel/Cacher.git"
+  },
+  "keywords": [
+    "react",
+    "rendering",
+    "rerendering",
+    "pure",
+    "cache",
+    "caching"
+  ],
+  "author": "Andrzej \"Mindriel\" Rozenfeld",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Mindriel/Cacher/issues"
+  },
+  "homepage": "https://github.com/Mindriel/Cacher#readme"
+}
