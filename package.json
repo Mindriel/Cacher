@@ -7,11 +7,11 @@
     "test": "tests"
   },
   "scripts": {
+    "buildSrc": "tsc src/*.ts --outDir build/src",
     "build": "tsc tests/*.ts --outDir build/",
     "tsTests": "npm run build && mocha --recursive ./build/tests",
-    "jsTests": "npm run build && mocha --recursive ./jsTests",
-    "test": "npm run tsTests && npm run jsTests",
-
+    "jsTests": "npm run buildSrc && mocha --recursive ./jsTests",
+    "test": "npm run build && mocha --recursive ./build/tests ./jsTests",
     "dev-test-watch": "mocha-typescript-watch"
   },
   "repository": {
@@ -34,6 +34,7 @@
   "homepage": "https://github.com/Mindriel/Cacher#readme",
   "dependencies": {},
   "devDependencies": {
+    "chai": "^3.5.0",
     "mocha": "^3.1.0",
     "mocha-typescript": "^1.0.10",
     "typescript": "^2.0.3"
