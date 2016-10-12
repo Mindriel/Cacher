@@ -1,6 +1,6 @@
 {
   "name": "Cacher",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple library for caching more complex function calls.",
   "main": "index.js",
   "directories": {
