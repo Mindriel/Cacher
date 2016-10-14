@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "buildSrc": "tsc src/*.ts --outDir build/src",
-    "build": "tsc tests/*.ts --outDir build/",
+    "buildSrc": "tsc --outDir build/src",
+    "build": "tsc --outDir build/",
     "tsTests": "npm run build && mocha --recursive ./build/tests",
     "jsTests": "npm run buildSrc && mocha --recursive ./jsTests",
     "test": "npm run build && mocha --recursive ./build/tests ./jsTests",

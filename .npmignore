@@ -1,0 +1,9 @@
+build/tests/
+tests/
+src/
+jsTests/
+typings/
+tsconfig.json
+typings.json
+.npmignore
+npm-debug.log*
