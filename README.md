@@ -111,7 +111,7 @@ function() {
 ```
 
 ### Clearing cache
-Since version 0.1.4 You can clear the inside cache:
+You can clear the inside cache:
 ```javascript
 function someFn(/* some arguments */) {
     /* do sth */
@@ -127,6 +127,31 @@ cacher.clear();
 const f34_prim = getter('34');
 // Here ( f34 !== f34_prim )
 ```
+
+### Additional/Call/Runtime arguments
+Also additional arguments can be passed.
+```javascript
+const base = {};
+function addError(component, error) {
+    if (!base[component]) { base[component] = [] }
+    if (base[component].includes(error)) { return; }
+    base[component].push(error);
+}
+
+const getter = new Cacher().functor(addError).create();
+
+getter('component1')('sth');
+getter('component1')('probably');
+getter('component2')('could be');
+getter('component1')('wrong');
+getter('component1')('wrong');
+
+expect(base).to.deep.equal({
+    'component1': ['sth', 'probably', 'wrong'],
+    'component2': ['could be']
+});
+```
+
 
 ### More to it
 You can index by any simple type:
