@@ -7,4 +7,5 @@ export default class Cacher {
     functor(functor_: Function): this;
     action(argumentNumber: number): this;
     create(): Function;
+    clear(): void;
 }

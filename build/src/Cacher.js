@@ -23,7 +23,7 @@ var Cacher = (function () {
         return function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             if (!_this._cache[args[0]]) {
                 _this._cache[args[0]] = function () {
@@ -35,6 +35,9 @@ var Cacher = (function () {
             }
             return _this._cache[args[0]];
         };
+    };
+    Cacher.prototype.clear = function () {
+        this._cache = {};
     };
     return Cacher;
 }());
