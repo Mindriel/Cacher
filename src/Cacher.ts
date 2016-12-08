@@ -32,4 +32,8 @@ export default class Cacher {
             return this._cache[args[0]];
         };
     }
+
+    public clear() : void {
+        this._cache = {};
+    }
 }
