@@ -27,10 +27,15 @@ var Cacher = (function () {
             }
             if (!_this._cache[args[0]]) {
                 _this._cache[args[0]] = function () {
+                    var callArgs = [];
+                    for (var _i = 0; _i < arguments.length; _i++) {
+                        callArgs[_i] = arguments[_i];
+                    }
                     if (_this._action) {
                         args[_this._action]();
                     }
-                    _this._functor.call(_this._context, args[0]);
+                    (_a = _this._functor).call.apply(_a, [_this._context, args[0]].concat(callArgs));
+                    var _a;
                 };
             }
             return _this._cache[args[0]];
