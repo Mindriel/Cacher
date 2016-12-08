@@ -110,6 +110,24 @@ function() {
 }
 ```
 
+### Clearing cache
+Since version 0.1.4 You can clear the inside cache:
+```javascript
+function someFn(/* some arguments */) {
+    /* do sth */
+}
+const cacher = new Cacher().functor(someFn);
+const getter = cacher.create();
+
+const f34 = getter('34');
+
+/* use getter */
+
+cacher.clear();
+const f34_prim = getter('34');
+// Here ( f34 !== f34_prim )
+```
+
 ### More to it
 You can index by any simple type:
  - number
