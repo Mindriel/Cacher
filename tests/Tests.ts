@@ -161,4 +161,31 @@ describe('Babel-less tests', function() {
             expect(actionCalled).to.equal(3);
         });
     });
+
+    describe('passing aditional arguments', function () {
+        it('direct call arguments passed to functor', function () {
+            const component1 = 'component1';
+            const component2 = 'component2';
+
+            const base = {};
+            function addError(component, error) {
+                if (!base[component]) { base[component] = [] }
+                if (base[component].includes(error)) { return; }
+                base[component].push(error);
+            }
+
+            const getter = new Cacher().functor(addError).create();
+
+            getter(component1)('sth');
+            getter(component1)('probably');
+            getter(component2)('could be');
+            getter(component1)('wrong');
+            getter(component1)('wrong');
+
+            expect(base).to.deep.equal({
+                [component1]: ['sth', 'probably', 'wrong'],
+                [component2]: ['could be']
+            });
+        })
+    })
 });

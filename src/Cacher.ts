@@ -22,11 +22,11 @@ export default class Cacher {
     public create() : Function {
         return (...args) => {
             if (!this._cache[args[0]]) {
-                this._cache[args[0]] = () => {
+                this._cache[args[0]] = (...callArgs) => {
                     if (this._action) {
                         args[this._action]();
                     }
-                    this._functor.call(this._context, args[0]);
+                    this._functor.call(this._context, args[0], ...callArgs);
                 };
             }
             return this._cache[args[0]];
