@@ -1,5 +1,7 @@
 # Cacher
 
+[![npm version](https://badge.fury.io/js/Cacher.svg)](https://badge.fury.io/js/Cacher)
+[![GitHub version](https://badge.fury.io/gh/Mindriel%2FCacher.svg)](https://badge.fury.io/gh/Mindriel%2FCacher)
 [![Build Status](https://api.travis-ci.org/Mindriel/Cacher.svg?branch=master)](https://travis-ci.org/Mindriel/Cacher)
 
 Simple library for caching more complex function calls.
