@@ -7,10 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "buildSrc": "tsc --outDir build/src",
     "build": "tsc --outDir build/",
-    "tsTests": "npm run build && mocha --recursive ./build/tests",
-    "jsTests": "npm run buildSrc && mocha --recursive ./jsTests",
     "test": "npm run build && mocha --recursive ./build/tests ./jsTests",
     "dev-test-watch": "mocha-typescript-watch",
     "coverage": "npm run build && grunt"
