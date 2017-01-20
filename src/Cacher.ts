@@ -20,16 +20,19 @@ export default class Cacher {
     }
 
     public create() : Function {
-        return (...args) => {
-            if (!this._cache[args[0]]) {
-                this._cache[args[0]] = (...callArgs) => {
-                    if (this._action) {
-                        args[this._action]();
+        const cacherContext = this;
+        return function() {
+            const args = arguments;
+            if (!cacherContext._cache[args[0]]) {
+                cacherContext._cache[args[0]] = function() {
+                    if (cacherContext._action) {
+                        args[cacherContext._action]();
                     }
-                    this._functor.call(this._context, args[0], ...callArgs);
+                    const callArgs = Array.prototype.slice.call(arguments);
+                    cacherContext._functor.call(cacherContext._context, args[0], ...callArgs);
                 };
             }
-            return this._cache[args[0]];
+            return cacherContext._cache[args[0]];
         };
     }
 
