@@ -3,6 +3,8 @@
 [![npm version](https://badge.fury.io/js/Cacher.svg)](https://badge.fury.io/js/Cacher)
 [![GitHub version](https://badge.fury.io/gh/Mindriel%2FCacher.svg)](https://badge.fury.io/gh/Mindriel%2FCacher)
 [![Build Status](https://api.travis-ci.org/Mindriel/Cacher.svg?branch=master)](https://travis-ci.org/Mindriel/Cacher)
+[![Dependencies](https://david-dm.org/Mindriel/Cacher.svg)](https://david-dm.org/Mindriel/Cacher)
+[![devDependencies](https://david-dm.org/Mindriel/Cacher/dev-status.svg)](https://david-dm.org/Mindriel/Cacher?type=dev)
 
 Simple library for caching more complex function calls.
 
