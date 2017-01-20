@@ -1,4 +1,7 @@
 # Cacher
+
+[![Build Status](https://api.travis-ci.org/Mindriel/Cacher.svg?branch=master)](https://travis-ci.org/Mindriel/Cacher)
+
 Simple library for caching more complex function calls.
 
 Can be used with react not to trigger rerendering by constantly creating new functors for components props.  
