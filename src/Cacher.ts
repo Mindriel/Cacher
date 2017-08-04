@@ -3,6 +3,7 @@ export default class Cacher {
     private _functor : Function = null;
     private _context : Object = null;
     private _action : number = null;
+    private _creator : Function = null;
 
     public context(context_ : Object) : this {
         this._context = context_;
@@ -16,6 +17,11 @@ export default class Cacher {
 
     public action(argumentNumber : number) : this {
         this._action = argumentNumber;
+        return this;
+    }
+
+    public creator(creator_ : Function) : this {
+        this._creator = creator_;
         return this;
     }
 

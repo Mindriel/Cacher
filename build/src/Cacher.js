@@ -6,6 +6,7 @@ var Cacher = (function () {
         this._functor = null;
         this._context = null;
         this._action = null;
+        this._creator = null;
     }
     Cacher.prototype.context = function (context_) {
         this._context = context_;
@@ -17,6 +18,10 @@ var Cacher = (function () {
     };
     Cacher.prototype.action = function (argumentNumber) {
         this._action = argumentNumber;
+        return this;
+    };
+    Cacher.prototype.creator = function (creator_) {
+        this._creator = creator_;
         return this;
     };
     Cacher.prototype.create = function () {

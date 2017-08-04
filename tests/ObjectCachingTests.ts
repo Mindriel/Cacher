@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import Cacher from '../src/Cacher';
 
-describe('Object caching', function() {
+describe('Objects caching:', function() {
     it('objects are cached depending on first argument', function () {
         function someCreator() {
             return {};
@@ -31,5 +31,22 @@ describe('Object caching', function() {
         expect(o2_1).to.equal(getter(id_1, function() { return 'boom'; }));
         expect(o2_1).to.equal(getter(id_1, 'blah', null));
         expect(o2_1).to.equal(getter(id_1, function() { return 'boom'; }, 'blah', null));
+    });
+
+    it('can\'t create a getter for both objects and functors', function () {
+        function someFunction() {}
+
+        const cacher = new Cacher()
+            .creator(someFunction)
+            .functor(someFunction);
+
+        return Promise.resolve()
+            .then(function () {
+                cacher.create();
+            })
+            .then(
+                () => { throw new Error('Should fail'); },
+                err => err
+            );
     });
 });
