@@ -1,6 +1,6 @@
 "use strict";
-exports.__esModule = true;
-var Cacher = /** @class */ (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var Cacher = (function () {
     function Cacher() {
         this._cache = {};
         this._functor = null;
@@ -41,4 +41,4 @@ var Cacher = /** @class */ (function () {
     };
     return Cacher;
 }());
-exports["default"] = Cacher;
+exports.default = Cacher;
