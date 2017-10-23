@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "tsc --outDir build/",
+    "build": "rm -r build 2> /dev/null || true && tsc --outDir build/",
     "test": "npm run build && mocha --recursive ./build/tests ./jsTests",
     "dev-test-watch": "mocha-typescript-watch",
     "coverage": "npm run build && grunt"
