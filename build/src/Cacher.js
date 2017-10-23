@@ -1,5 +1,6 @@
 "use strict";
-var Cacher = (function () {
+exports.__esModule = true;
+var Cacher = /** @class */ (function () {
     function Cacher() {
         this._cache = {};
         this._functor = null;
@@ -40,5 +41,4 @@ var Cacher = (function () {
     };
     return Cacher;
 }());
-exports.__esModule = true;
 exports["default"] = Cacher;
