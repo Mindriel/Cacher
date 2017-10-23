@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "removeComments": false,
+    "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": false,
     "experimentalDecorators": true,
-    "declaration": true
+    "declaration": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "target": "es5",
+    "rootDir": ".",
+    "lib": ["es5", "es2015"]
   },
   "exclude": [
     "node_modules",
