@@ -22,7 +22,10 @@
     "rerendering",
     "pure",
     "cache",
-    "caching"
+    "caching",
+    "function",
+    "functional",
+    "functor"
   ],
   "author": "Andrzej \"Mindriel\" Rozenfeld",
   "license": "Apache-2.0",
@@ -32,14 +35,13 @@
   "homepage": "https://github.com/Mindriel/Cacher#readme",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^4.1.2",
-    "codeclimate-test-reporter": "^0.5.0",
-    "grunt": "^1.0.1",
+    "chai": "^4.2.0",
+    "grunt": "^1.0.3",
     "grunt-istanbul": "^0.8.0",
     "grunt-mocha-istanbul": "^5.0.2",
     "istanbul": "^0.4.5",
-    "mocha": "^4.0.1",
-    "mocha-typescript": "^1.1.11",
-    "typescript": "^2.5.3"
+    "mocha": "^4.1.0",
+    "typescript": "^2.9.2",
+    "@types/mocha": "^5.2.6"
   }
 }
