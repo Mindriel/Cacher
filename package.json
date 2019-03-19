@@ -10,7 +10,9 @@
     "build": "rm -r build 2> /dev/null || true && tsc --outDir build/",
     "test": "npm run build && mocha --recursive ./build/tests ./jsTests",
     "dev-test-watch": "mocha-typescript-watch",
-    "coverage": "npm run build && grunt"
+    "coverage": "npm run build && grunt",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'tests/**/*.ts'",
+    "checkAll": "npm run lint && npm run coverage"
   },
   "repository": {
     "type": "git",
@@ -35,13 +37,14 @@
   "homepage": "https://github.com/Mindriel/Cacher#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/mocha": "^5.2.6",
     "chai": "^4.2.0",
     "grunt": "^1.0.3",
     "grunt-istanbul": "^0.8.0",
     "grunt-mocha-istanbul": "^5.0.2",
     "istanbul": "^0.4.5",
     "mocha": "^6.0.2",
-    "typescript": "^3.3.3333",
-    "@types/mocha": "^5.2.6"
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333"
   }
 }
