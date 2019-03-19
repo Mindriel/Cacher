@@ -1,6 +1,6 @@
 "use strict";
-exports.__esModule = true;
-var Cacher = /** @class */ (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var Cacher = (function () {
     function Cacher() {
         this._cache = {};
         this._functor = null;
@@ -25,12 +25,12 @@ var Cacher = /** @class */ (function () {
             var args = arguments;
             if (!cacherContext._cache[args[0]]) {
                 cacherContext._cache[args[0]] = function () {
+                    var _a;
                     if (cacherContext._action) {
                         args[cacherContext._action]();
                     }
                     var callArgs = Array.prototype.slice.call(arguments);
                     (_a = cacherContext._functor).call.apply(_a, [cacherContext._context, args[0]].concat(callArgs));
-                    var _a;
                 };
             }
             return cacherContext._cache[args[0]];
@@ -41,4 +41,4 @@ var Cacher = /** @class */ (function () {
     };
     return Cacher;
 }());
-exports["default"] = Cacher;
+exports.default = Cacher;
