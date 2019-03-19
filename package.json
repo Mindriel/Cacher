@@ -40,8 +40,8 @@
     "grunt-istanbul": "^0.8.0",
     "grunt-mocha-istanbul": "^5.0.2",
     "istanbul": "^0.4.5",
-    "mocha": "^4.1.0",
-    "typescript": "^2.9.2",
+    "mocha": "^6.0.2",
+    "typescript": "^3.3.3333",
     "@types/mocha": "^5.2.6"
   }
 }
