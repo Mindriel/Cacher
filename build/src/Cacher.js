@@ -2,42 +2,42 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Cacher = (function () {
     function Cacher() {
-        this._cache = {};
-        this._functor = null;
-        this._context = null;
-        this._action = null;
+        this.heldCache = {};
+        this.heldFunctor = null;
+        this.heldContext = null;
+        this.heldAction = null;
     }
-    Cacher.prototype.context = function (context_) {
-        this._context = context_;
+    Cacher.prototype.context = function (context) {
+        this.heldContext = context;
         return this;
     };
-    Cacher.prototype.functor = function (functor_) {
-        this._functor = functor_;
+    Cacher.prototype.functor = function (functor) {
+        this.heldFunctor = functor;
         return this;
     };
     Cacher.prototype.action = function (argumentNumber) {
-        this._action = argumentNumber;
+        this.heldAction = argumentNumber;
         return this;
     };
     Cacher.prototype.create = function () {
         var cacherContext = this;
         return function () {
             var args = arguments;
-            if (!cacherContext._cache[args[0]]) {
-                cacherContext._cache[args[0]] = function () {
+            if (!cacherContext.heldCache[args[0]]) {
+                cacherContext.heldCache[args[0]] = function () {
                     var _a;
-                    if (cacherContext._action) {
-                        args[cacherContext._action]();
+                    if (cacherContext.heldAction) {
+                        args[cacherContext.heldAction]();
                     }
                     var callArgs = Array.prototype.slice.call(arguments);
-                    (_a = cacherContext._functor).call.apply(_a, [cacherContext._context, args[0]].concat(callArgs));
+                    (_a = cacherContext.heldFunctor).call.apply(_a, [cacherContext.heldContext, args[0]].concat(callArgs));
                 };
             }
-            return cacherContext._cache[args[0]];
+            return cacherContext.heldCache[args[0]];
         };
     };
     Cacher.prototype.clear = function () {
-        this._cache = {};
+        this.heldCache = {};
     };
     return Cacher;
 }());

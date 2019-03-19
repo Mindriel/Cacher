@@ -1,10 +1,10 @@
 export default class Cacher {
-    private _cache;
-    private _functor;
-    private _context;
-    private _action;
-    context(context_: Object): this;
-    functor(functor_: Function): this;
+    private heldCache;
+    private heldFunctor;
+    private heldContext;
+    private heldAction;
+    context(context: Object): this;
+    functor(functor: Function): this;
     action(argumentNumber: number): this;
     create(): Function;
     clear(): void;
