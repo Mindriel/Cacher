@@ -25,12 +25,12 @@ var Cacher = (function () {
             var args = arguments;
             if (!cacherContext._cache[args[0]]) {
                 cacherContext._cache[args[0]] = function () {
+                    var _a;
                     if (cacherContext._action) {
                         args[cacherContext._action]();
                     }
                     var callArgs = Array.prototype.slice.call(arguments);
                     (_a = cacherContext._functor).call.apply(_a, [cacherContext._context, args[0]].concat(callArgs));
-                    var _a;
                 };
             }
             return cacherContext._cache[args[0]];
